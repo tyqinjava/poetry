@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style type="text/css">
+
+        body {
+            background-image: url(/img/bodybg.png);
+        }
+        #poems {
+            width: 400px;
+            margin: auto;
+            font-family: '新宋体';
+        }
+        #items p {
+            padding: 15px;
+        }
+        .item {
+            border:saddlebrown;
+        }
+    </style>
+</head>
+<body>
+<div id="poems">
+    <div th:each="item:${items}" class="item">
+        <p><b th:text="${item.title}"></b></p>
+        <p><label>作者：</label><span th:text="${item.author}"></span></p>
+        <p th:utext="${item.content}"></p>
+        <hr>
+    </div>
+</div>
+</body>
+</html>
