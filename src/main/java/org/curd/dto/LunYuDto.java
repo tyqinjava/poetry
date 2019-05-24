@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class LunYuDto implements Serializable {
 
-
     private Integer id;
 
     private String chapter;

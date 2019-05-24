@@ -16,12 +16,14 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
+
 public abstract class AbstractService<T,ID> implements BaseService<T,ID> {
 
     @Override
     public abstract CrudRepository getCurdRepository();
 
     protected final Logger logger = LoggerFactory.getLogger(getClass());
+
 
     @Override
     public void save(Object entity) {
@@ -91,7 +93,6 @@ public abstract class AbstractService<T,ID> implements BaseService<T,ID> {
         }
         return Collections.emptyList();
     }
-
     public List<T> findRandPage(Integer size) {
         CrudRepository repository =  getCurdRepository();
         if(!(repository instanceof RandomPageable)) {
